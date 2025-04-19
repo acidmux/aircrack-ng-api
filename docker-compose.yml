@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  wifi-attack:
+    build: .
+    privileged: true
+    network_mode: host
+    devices:
+      - /dev/vchiq
+    volumes:
+      - /lib/modules:/lib/modules:ro
+    environment:
+      - FLASK_DEBUG=0  # Disable in production
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
