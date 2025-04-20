@@ -1,5 +1,5 @@
-FROM kalilinux/kali-linux-arm64:latest
-
+# FROM kalilinux/kali-linux-arm64:latest
+FROM kali-linux/kali-rolling:arm64
 # Install dependencies
 RUN apt update && apt install -y \
     python3-flask \
